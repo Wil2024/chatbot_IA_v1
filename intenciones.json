@@ -3,30 +3,30 @@
   "intents": [
     {
       "tag": "saludos",
-      "patterns": ["hola", "Hola", "como estas", "buenos días profesor", "una consulta", "que tal", "¿Cómo estás?", "Buenos días"],
-      "responses": ["¡Hola! ¿En qué puedo ayudarte?", "Buenos días, ¿cómo puedo ayudarte?", "Hola ¿tienes alguna consulta?"]
+      "patterns": ["hola", "Hola", "como estas", "buenos dias", "una consulta", "que tal", "¿Cómo estás?", "Buenos días"],
+      "responses": ["¡Hola! ¿En qué puedo ayudarte con nuestro UltraVision X1000?", "Buenos días, ¿cómo puedo asistirte con información sobre nuestro televisor UltraVision X1000?"]
     },
     {
-      "tag": "horario del curso",
+      "tag": "caracteristicas_tv",
       "patterns": [
-        "¿Cuáles es el horario del curso?",
-        "sobre el horario del curso",
-        "horario de las clases"
+        "¿Cuáles son las características del UltraVision X1000?",
+        "Dime más sobre el UltraVision X1000",
+        "Especificaciones del UltraVision X1000"
       ],
       "responses": [
-        "El horario de nuestras clases son todos los martes de 9 a 10pm, recuerda entrar con anticipación, la puntualidad es muy importante en mi clase."
+        "El UltraVision X1000 cuenta con una pantalla de 55 pulgadas 4K UHD con tecnología OLED, ofreciendo colores más vivos y negros más profundos. Incluye soporte para HDR10+, Dolby Vision, y un sistema de sonido Dolby Atmos para una experiencia auditiva inmersiva. Además, viene equipado con nuestro último sistema operativo SmartOS 8.0, permitiendo acceso a aplicaciones como Netflix, YouTube, y más."
       ]
     },
     
 {
-      "tag": "redes sociales",
+      "tag": "beneficios_tv",
       "patterns": [
-        "¿Sus datos de contacto?",
-        "¿cuales son sus Redes sociales?",
-        "¿Su linkedin?", "¿su facebook?", "¿su tik tok?", "¿Su instagram?"
+        "¿Qué beneficios ofrece el UltraVision X1000?",
+        "Por qué debería comprar el UltraVision X1000",
+        "Ventajas del UltraVision X1000"
       ],
       "responses": [
-        "Mi linkedin es:  <a href='https://www.linkedin.com/in/wiltontorvisco/' target='_blank'>Ingresa aquí</a> \n Mi facebook: @Wilton Torvisco"
+        "El UltraVision X1000 transforma tu experiencia de entretenimiento en casa con su impresionante calidad de imagen y sonido. Su tecnología de inteligencia artificial optimiza tanto el contenido como el audio en tiempo real, adaptándose a tus preferencias. El diseño sin bordes y su modo de arte lo convierten en una elegante adición a cualquier habitación. Además, su control remoto con comando de voz simplifica la navegación."
       ]
     },
 
@@ -97,9 +97,7 @@
     {
       "tag": "stock_tv",
       "patterns": [
-        "¿El UltraVision X1000 está disponible?",
-        "Tienen el UltraVision X1000 en stock",
-        "Disponibilidad del UltraVision X1000"
+        "¿El UltraVision X1000 está disponible?","¿hay stock disponible de la TV?","¿cual es el stock?", "Tienen el UltraVision X1000 en stock","Disponibilidad del UltraVision X1000"
       ],
       "responses": [
         "El UltraVision X1000 está actualmente en stock y listo para envío. Sin embargo, la demanda es alta y el stock puede variar rápidamente. Te recomendamos hacer tu pedido lo antes posible para asegurar tu compra."
