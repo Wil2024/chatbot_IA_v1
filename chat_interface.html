@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Wilton Torvisco</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #formulario {
+            width: 90%;
+            max-width: 500px;
+            margin-bottom: 20px;
+        }
+        #historial {
+            width: 90%;
+            max-width: 500px;
+            height: 50vh;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input[type="text"] {
+            height: 50px;
+            margin-bottom: 10px;
+        }
+        input[type="submit"], button {
+            height: 50px;
+            cursor: pointer;
+        }
+        .mensaje-usuario, .mensaje-chatbot {
+    margin-bottom: 8px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.mensaje-usuario {
+    justify-content: flex-end;
+}
+
+
+/* Estilos específicos para el texto del mensaje */
+.mensaje-usuario span, .mensaje-chatbot span {
+    box-shadow: 0px 0px 8px rgba(0,0,0,0.2); /* Sombreado suave */
+    border-radius: 5px; /* Bordes redondeados para el sombreado */
+    padding: 2px 5px; /* Pequeño relleno alrededor del texto para mejor visualización */
+}
+
+/* Fondo y color del texto específico para el mensaje del usuario */
+.mensaje-usuario span {
+    background-color: #A5FAEE; /* Fondo claro para el usuario */
+    color: #0D47A1; /* Texto oscuro para el usuario */
+}
+
+/* Fondo y color del texto específico para el mensaje del chatbot */
+.mensaje-chatbot span {
+    background-color: #A00000; /* Fondo oscuro para el chatbot */
+    color: #FFFFFF; /* Texto claro para el chatbot */
+}
+
+.mensaje-chatbot img {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    border-radius: 50%; /* Hace el ícono redondo */
+}
+
+        @media (min-width: 600px) {
+            body {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            #formulario, #historial {
+                width: 45%;
+                height: 90vh;
+            }
+            #historial {
+                overflow-y: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="formulario">
+        <img src="https://ideogram.ai/api/images/direct/tjm8Y6inQz-81twD6el-Ew.png" alt="Portada wilton" style="max-width: 100%; height: auto; margin-bottom: 5px">
+        <h1>Ing. Wilton Torvisco</h1>
+        <form action="/" method="post">
+            <input type="text" name="message" placeholder="Escribe tu pregunta aquí..." required>
+            <input type="submit" value="Enviar" onclick="scrollToBottom()">
+        </form>
+        <form action="/reset" method="post">
+            <button type="submit">Resetear Historial</button>
+        </form>
+    </div>
+    <div id="historial">
+        {% for conversacion in historial %}
+    <div class="mensaje-usuario"><strong>Tú:</strong> <span>{{ conversacion.pregunta }}</span></div>
+    <div class="mensaje-chatbot"><img src="https://media.licdn.com/dms/image/D4E03AQHPptJ2qFXSLA/profile-displayphoto-shrink_800_800/0/1689888987743?e=2147483647&v=beta&t=RRCTowHGBqnwvtWsjqUzAlLZNdlzi29UP42dGpXZClM" alt="Chatbot Icon"><strong>Wilton:</strong> <span>{{ conversacion.respuesta|safe }}</span></div>
+{% endfor %}
+
+    </div>
+ <script type="text/javascript">
+     
+     
+    document.addEventListener("DOMContentLoaded", function() {
+        var formulario = document.querySelector("form[action='/']");
+        formulario.onsubmit = function(e) {
+            e.preventDefault(); // Previene el envío predeterminado del formulario
+
+            var mensajeUsuario = formulario.elements['message'].value;
+            mostrarMensajeUsuario(mensajeUsuario); // Función para mostrar el mensaje del usuario en el historial
+
+            // Simula el envío de datos con Fetch API
+            fetch('/', {
+    method: 'POST',
+    body: new FormData(formulario),
+    headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+    }
+})
+
+            // Modifica esta sección del código anterior para manejar la respuesta JSON
+.then(response => response.json()) // Procesa la respuesta como JSON
+.then(data => {
+    setTimeout(() => {
+        mostrarRespuestaChatbot(data.respuesta); // Utiliza la respuesta del servidor
+        scrollToBottom(); // Asegúrate de que la vista se desplace hacia el último mensaje
+    }, 500); // Retraso de 1 segundo
+});
+
+
+            formulario.elements['message'].value = ''; // Limpia el campo de texto después de enviar
+            scrollToBottom(); // Desplaza después de añadir el mensaje del usuario
+        };
+
+        function mostrarMensajeUsuario(mensaje) {
+            var historial = document.getElementById('historial');
+            var div = document.createElement('div');
+            div.className = 'mensaje-usuario';
+            div.innerHTML = '<strong>Tú:</strong> <span>' + mensaje + '</span>';
+            historial.appendChild(div);
+        }
+
+        function mostrarRespuestaChatbot(mensaje) {
+            var historial = document.getElementById('historial');
+            var div = document.createElement('div');
+            div.className = 'mensaje-chatbot';
+            div.innerHTML = '<img src="https://media.licdn.com/dms/image/D4E03AQHPptJ2qFXSLA/profile-displayphoto-shrink_800_800/0/1689888987743?e=2147483647&v=beta&t=RRCTowHGBqnwvtWsjqUzAlLZNdlzi29UP42dGpXZClM" alt="Chatbot Icon"><strong>Wilton Torvisco</strong> <span>' + mensaje + '</span>';
+            historial.appendChild(div);
+        }
+    });
+
+    function scrollToBottom() {
+        var historial = document.getElementById('historial');
+        historial.scrollTop = historial.scrollHeight;
+    }
+</script>
+
+</html>

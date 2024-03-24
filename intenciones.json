@@ -1,0 +1,129 @@
+{
+ 
+  "intents": [
+    {
+      "tag": "saludos",
+      "patterns": ["hola", "Hola", "como estas", "buenos días profesor", "una consulta", "que tal", "¿Cómo estás?", "Buenos días"],
+      "responses": ["¡Hola! ¿En qué puedo ayudarte?", "Buenos días, ¿cómo puedo ayudarte?", "Hola ¿tienes alguna consulta?"]
+    },
+    {
+      "tag": "horario del curso",
+      "patterns": [
+        "¿Cuáles es el horario del curso?",
+        "sobre el horario del curso",
+        "horario de las clases"
+      ],
+      "responses": [
+        "El horario de nuestras clases son todos los martes de 9 a 10pm, recuerda entrar con anticipación, la puntualidad es muy importante en mi clase."
+      ]
+    },
+    
+{
+      "tag": "redes sociales",
+      "patterns": [
+        "¿Sus datos de contacto?",
+        "¿cuales son sus Redes sociales?",
+        "¿Su linkedin?", "¿su facebook?", "¿su tik tok?", "¿Su instagram?"
+      ],
+      "responses": [
+        "Mi linkedin es:  <a href='https://www.linkedin.com/in/wiltontorvisco/' target='_blank'>Ingresa aquí</a> \n Mi facebook: @Wilton Torvisco"
+      ]
+    },
+
+    {
+      "tag": "precio_tv",
+      "patterns": ["¿Cuál es el precio del UltraVision X1000?", "Precio del UltraVision X1000", "Cuánto cuesta el UltraVision X1000", "en cuanto está valorizado", "precios", "costo"],
+      "responses": ["El UltraVision X1000 tiene un precio de lanzamiento de $1499. Incluye una garantía de 2 años y acceso gratuito por 6 meses a nuestro servicio exclusivo de streaming."]
+    },
+    {
+      "tag": "soporte_tv",
+      "patterns": [
+        "¿Qué tipo de soporte ofrecen para el UltraVision X1000?",
+        "Necesito ayuda con mi UltraVision X1000",
+        "Soporte técnico para UltraVision X1000"
+      ],
+      "responses": [
+        "Ofrecemos soporte técnico completo para el UltraVision X1000, incluyendo asistencia en línea 24/7, guías de usuario detalladas en nuestro sitio web, y servicio técnico a domicilio. Para cualquier inconveniente o consulta, no dudes en contactarnos."
+      ]
+    },
+    
+{
+      "tag": "comparar_tv",
+      "patterns": [
+        "¿Cómo se compara el UltraVision X1000 con otros televisores?",
+        "Comparación del UltraVision X1000",
+        "UltraVision X1000 vs otros modelos"
+      ],
+      "responses": [
+        "El UltraVision X1000 se destaca por su tecnología de pantalla OLED 4K UHD, ofreciendo una calidad de imagen superior en comparación con televisores LCD tradicionales. Su sistema de sonido Dolby Atmos y las capacidades inteligentes integradas lo ponen por delante de la competencia, asegurando la mejor experiencia de entretenimiento en casa."
+      ]
+    },
+  
+
+
+    {
+      "tag": "precio_tv_soles",
+      "patterns": [
+        "¿Cuál es el precio del UltraVision X1000 en soles?",
+        "Precio del UltraVision X1000",
+        "Cuánto cuesta el UltraVision X1000 en soles"
+      ],
+      "responses": [
+        "El UltraVision X1000 tiene un precio de lanzamiento de S/5400 en Perú. Este precio incluye IGV y una garantía de 2 años, además de acceso gratuito por 6 meses a nuestro servicio exclusivo de streaming."
+      ]
+    },
+    {
+      "tag": "promociones_tv",
+      "patterns": [
+        "¿Hay promociones para el UltraVision X1000?",
+        "Descuentos en el UltraVision X1000",
+        "Ofertas para el UltraVision X1000"
+      ],
+      "responses": [
+        "Actualmente, ofrecemos un 10% de descuento en el UltraVision X1000 para compras realizadas a través de nuestra tienda en línea. Además, si pagas con tarjeta de crédito de nuestros bancos asociados, puedes acceder a hasta 12 cuotas sin intereses. Visita nuestra página de promociones para más detalles."
+      ]
+    },
+    {
+      "tag": "metodos_pago",
+      "patterns": [
+        "¿Qué métodos de pago aceptan?",
+        "Cómo puedo pagar el UltraVision X1000",
+        "Formas de pago para el UltraVision X1000"
+      ],
+      "responses": [
+        "Aceptamos varios métodos de pago, incluyendo tarjetas de crédito y débito, transferencias bancarias, Yape, Plin y pagos en efectivo al momento de la entrega. También aceptamos pagos a través de billeteras digitales para tu conveniencia."
+      ]
+    },
+    {
+      "tag": "stock_tv",
+      "patterns": [
+        "¿El UltraVision X1000 está disponible?",
+        "Tienen el UltraVision X1000 en stock",
+        "Disponibilidad del UltraVision X1000"
+      ],
+      "responses": [
+        "El UltraVision X1000 está actualmente en stock y listo para envío. Sin embargo, la demanda es alta y el stock puede variar rápidamente. Te recomendamos hacer tu pedido lo antes posible para asegurar tu compra."
+      ]
+    },
+    {
+      "tag": "entrega_tv",
+      "patterns": [
+        "¿Cuánto tarda la entrega del UltraVision X1000?",
+        "Tiempo de entrega para el UltraVision X1000",
+        "Cuándo recibiré mi UltraVision X1000 después de comprarlo"
+      ],
+      "responses": [ "El tiempo de entrega del UltraVision X1000 suele ser de 1 a 2 días hábiles después de confirmado tu pedido. Ofrecemos seguimiento en línea para que puedas monitorear el estado de tu entrega en tiempo real."]
+    },
+{
+      "tag": "delivery_tv",
+      "patterns": [
+        "¿Hacen delivery?",
+        "zonas de cobertura",
+        "envios a lima y provincias"
+      ],
+      "responses": [
+        "Realizamos envíos a Lima y provincia, para Lima el tiempo de entrega suele ser de 1 a 2 días hábiles después de confirmado tu pedido. Ofrecemos seguimiento en línea para que puedas monitorear el estado de tu entrega en tiempo real. \nPara provincia, tarda aproximadamente 2 a 3 días, envíamos a través de Marvisur y Shalom, el que recepciona paga el costo de envío."
+      ]
+    }
+  ]
+}
